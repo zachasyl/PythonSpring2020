@@ -1,0 +1,47 @@
+CS5001 
+Spring 2020
+Zachary Sylvane
+HW3 January 27, 2020
+
+
+
+Written #1
+
+
+1A
+
+Loop is not infinite.
+No error.
+
+Beetlejuice!
+Beetlejuice!
+Beetlejuice!
+
+1B
+Loop is not infinite (it never starts)
+No error
+Ghost with the Most!
+
+1C
+Loop is infinite
+No error
+Will keep printing "shake " with one space
+Señora won't print because the loop never ends
+
+Written #2
+
+2A.
+Option 1
+
+2B.
+Choice (2)
+
+Written #3
+
+3
+
+Written #4
+
+1, 2, 3, 5, 2, 3, 4, 6
+
+

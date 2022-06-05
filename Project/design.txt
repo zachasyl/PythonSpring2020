@@ -1,0 +1,100 @@
+
+CS5001 
+Spring 2020
+Zachary Sylvane
+Project
+April 8, 2020
+
+
+- I developed the A- level of the game. I believe I covered every required game functionality
+  and the game itself does everything required (although I had some issues separating turtle
+  From functions and should have used more methods and attributes.
+
+
+- There are two classes, Board and Player.
+
+class Board:
+    ''' Class: Board
+        Attributes: board, turn, over
+        Methods: constructor, winner, win_conditions
+    '''
+
+
+class Player:
+    ''' Class: Player
+        Attributes: color, turn, maximum, number, score
+        Methods: constructor, turn_start
+    '''
+
+
+- For reading and writing files I used separate functions found in functions.py.
+
+- There are two functions in my driver. I tried to make them methods of board and considered changing the Board
+  class to be named Game and making a Board class with the functions in my driver. Unfortunately, I could not
+  find a way to move the functions out of the driver, they are not modular, I spent many hours trying to.
+  Part of my issue was that the turtle onclick may only take one parameter that is a function, and I needed to pass more than one parameter. I cannot move them to another file as functions due to circularity issues
+
+
+
+  
+ def column_clicked(col1_x,col1_y):
+        '''
+        Function column_clicked
+        Parameters: col1_x and col1_y, ints
+        Returns: none
+        Does: detects the chosen column and
+              passes it to turn_switcher as parameter
+        '''
+
+
+ def turn_switcher(chosen_column):
+        '''
+        Function turn_switcher
+        Parameters: chosen_column, int
+        Returns: none
+        Does: if the turn is even, player ones turn 
+              if the turn is odd, player twos turn.
+              
+        '''
+        if game_board.turn % 2 !=0:
+            # this is triggered on player 1 turn AFTER player 1 makes a click
+            # (after which everything is updated and it is player 2's turn).
+            player_1.turn_start(board, maximum, chosen_column, x_coordinates_rows, y_coordinates_rows)
+            
+            player = player_1
+            print('Player 1, Black')
+
+        if game_board.turn % 2 == 0:
+            player_2.turn_start(board, maximum, chosen_column, x_coordinates_rows, y_coordinates_rows)
+            
+            player = player_2
+            print('Player 2, Red')
+
+        # after turn, updates board object w/ list containing last move
+        game_board.board = board
+        # after turn, checks win conditions for player that just moved and current board
+        game_board.win_conditions(game_board.board, player)
+
+-
+
+
+- In terms of data structures, I mostly used lists and appended elements because I am most familiar with lists and while I used dictionaries in the cookie clicker     game, I did not see a benefit here especially since I did not want to work with the immutable keys and lists seemed to be good for representing the board or parts of the board. Most of my lists were the same size, which made it easy to compare lists (for instance, my list of x coordinates,
+Y coordinates, and the board were all the same length). I also made a list to check verticals, which rearranged my normal/ horizontal board list
+such that I could check vertical win conditions using the same code I used to check horizontals.
+  
+
+
+- Testing graphical functions. 
+
+  In testing graphics, I mostly used a smaller 5x5 board. First, I made sure that 'gravity' existed for each column 
+  by clicking the columns. Simultaneously I made sure that each turn, the checker is black or red. I checked to ensure
+  that you cannot add a checker once a column is full.
+
+  Next, I checked each win condition for each color. I ensured that if, for instance, there are two horizontal reds, a space, and two horizontal reds,
+  , it would not count as four in a row (I did similar tests for verticals and diagonals). This testing made me realize that using a counter for 
+  checks was not a great idea for diagonals and I readjusted my code for diagonals.  I also tested diagonals with positive and negative slope.
+  Another issue I came across while testing was that when a player made a move that created five or six in a row (with a single move), it sometimes would
+  cause an error. I thereafter fixed that issue. Lastly, I tested to check a tie game by filling every space on two different sized boards. While
+  checking for a tie game I found that filling a column past max led to an index error which I was able to fix by adding a conditional and a break to
+  a while loop; if a player adds a tile to a maxed out column, nothing happens and the next player may then make a move.
+

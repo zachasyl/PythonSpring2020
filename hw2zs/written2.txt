@@ -1,0 +1,59 @@
+CS5001 
+Spring 2020
+Zachary Sylvane
+HW2 (functions and testing)
+January 18, 2020
+
+
+
+Written #1
+
+
+1A
+
+Name: ​print_formatted 
+Parameters: ​one string 
+Return type: ​nothing (void)
+
+
+string = ('hello')
+print_formatted(string)
+
+	
+1B
+Name: ​get_max 
+Parameters: ​two integers 
+Return type: ​int
+
+
+max = get_max(2, 5)
+
+
+1C
+Name: ​log_base_two 
+Parameter: ​int
+Return type: ​float
+
+
+log = log_base_two(8)
+
+
+Written #2
+
+Nothing will execute after line 2, which contains a return statement. Instead, 6.0 will be returned and set to the value of variable div, and then 6 will be printed.
+
+Written 
+#3A
+19 and then 18. The f1 function will print 19 and the main function will print 18. M=m+1 will not change the value of m inside main. Even if f1 had a return m the print would not change because the f1 return value won't be printed in main (no variable is set to the value of a return).
+
+3B
+19, then 18, then 19. F1 will print 19; f2 will print 18; main will print 19.
+
+3C
+18, then 20, then 19. The f2 function prints 18; the f1 function prints 20; main function prints 19.
+
+Written 4
+I think function 1 is more flexible. I can utilize the returned amount in main several different ways. If I actually do not want to print a string and sq, I would have to go into the function file to change it instead of just changing it in main. If I'm on a team and its my job to make the function, the person working in main would not be able to change what is printed from within main.
+
+If 100% you want to print, functionalist 2 is better especially if you want to print multiple times since you can just call it multiple times and each time it would print.
+

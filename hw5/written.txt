@@ -1,0 +1,32 @@
+CS5001 
+Spring 2020
+Zachary Sylvane
+HW5 February 10, 2020
+
+
+Written 1
+
+1A tugboattugboat
+
+2B tugboatboat
+
+1C False
+
+
+Written 2
+
+interval = 1
+output = ""
+for i in range(len(s)):
+  output = output + s[i-interval]
+  interval+=2
+print(output)
+
+
+Written 3
+
+3A so
+
+3B sox
+
+3C sox
